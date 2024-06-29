@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- PON UN FAVICON!!! -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@600;0,700&display=swap" rel="stylesheet">
+    <!-- CAMBIA EL TITLE!!! -->
+    <title>Vite Template</title>
+  </head>
+  <body>
+    <header>
+      <div>
+        <span>YOU</span>
+        <span id="points-user">0</span>
+      </div>
+      <div>
+        <span>PC:</span>
+        <span id="points-pc">0</span>
+      </div>  
+    </header>
+    <main>
+      <div id="game-items" class="game-items">
+      <div class="game-item game-item-blue" data-item="paper">
+        <img class="game-item-image" src="./assets/images (4)/images/icon-paper.svg" alt="icon paper">
+      </div>
+      <div class="game-item game-item-yellow" data-item="scissors">
+        <img class="game-item-image" src="./assets/images (4)/images/icon-scissors.svg" alt="icon scissors">
+        
+      </div>
+      <div class="game-item game-item-rock" data-item="rock">
+        <img class="game-item-image" src="./assets/images (4)/images/icon-rock.svg" alt="icon rock">
+        
+      </div>
+    </div>
+    <div>
+      <span>YOU PICKED</span>
+      <span id="user-picked"></span>
+    </div>
+    <div>
+      <span>PC PICKED:</span>
+      <span id="pc-picked"></span>
+    </div> 
+    <p id="result">You win</p>
+    </main>
+    <script type="module" src="./js/index.js"></script>
+  </body>
+</html>

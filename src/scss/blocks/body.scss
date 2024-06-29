@@ -2,6 +2,57 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  background-color: #111;
-  font-family: sans-serif;
+  margin: 0;
+  height: 100vh;
+  background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237,49%,15%));
+  color: white;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.main{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  left: 30%;
+  right: 30%;
+  gap: 8rem;
+}
+
+.title{
+  text-transform: uppercase;
+}
+.game-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(227, 227, 227);
+  width: 198px;
+  height: 194px;
+  border-radius: 50% ;
+}
+
+.game-item-blue{
+  border: 20px solid rgb(86, 113, 245);
+  position: absolute;
+  top: 262px;
+  left: 445px;
+}
+.game-item-yellow{
+  border: 20px solid rgb(237, 167, 35);
+  position: absolute;
+  top: 262px;
+  left: 723px;
+}
+.game-item-rock{
+  border: 20px solid rgb(222, 64, 93);
+  position: absolute;
+  top: 489px;
+  left: 584px;
+}
+// para que la imagen sea inmune al click
+.game-item__image{
+  pointer-events: none;
 }
