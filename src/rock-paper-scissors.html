@@ -12,28 +12,34 @@
     <title>Vite Template</title>
   </head>
   <body>
-    <header>
-      <div>
-        <span>YOU</span>
-        <span id="points-user">0</span>
+    <header class="header">
+      <div class="score">
+        <span class="score__title">YOU</span>
+        <span id="points-user" class="score__points">0</span>
       </div>
-      <div>
-        <span>PC:</span>
-        <span id="points-pc">0</span>
+      <div class="logo">
+        <span class="block">ROCK</span>
+        <span class="block">PAPER</span>
+        <span class="block">SCISORS</span>
+      </div>
+      <div class="score">
+        <span class="score__title">PC:</span>
+        <span id="points-pc" class="score__points">0</span>
       </div>  
     </header>
     <main>
+      <div class="img-triangle"><img src="./assets/images (4)/images/bg-triangle.svg" alt="triangle"></div>
       <div id="game-items" class="game-items">
-      <div class="game-item game-item-blue" data-item="paper">
-        <img class="game-item-image" src="./assets/images (4)/images/icon-paper.svg" alt="icon paper">
-      </div>
-      <div class="game-item game-item-yellow" data-item="scissors">
-        <img class="game-item-image" src="./assets/images (4)/images/icon-scissors.svg" alt="icon scissors">
-        
-      </div>
-      <div class="game-item game-item-rock" data-item="rock">
-        <img class="game-item-image" src="./assets/images (4)/images/icon-rock.svg" alt="icon rock">
-        
+        <div class="game-item game-item-blue" data-item="paper">
+          <img class="game-item-image" src="./assets/images (4)/images/icon-paper.svg" alt="icon paper">
+        </div>
+        <div class="game-item game-item-yellow" data-item="scissors">
+          <img class="game-item-image" src="./assets/images (4)/images/icon-scissors.svg" alt="icon scissors">
+          
+        </div>
+        <div class="game-item game-item-rock" data-item="rock">
+          <img class="game-item-image" src="./assets/images (4)/images/icon-rock.svg" alt="icon rock">
+          
       </div>
     </div>
     <div>

@@ -1,1 +1,20 @@
+main{
+    display: block;
+}
+// .game-items {
+//     position: relative;
+//     width: 340px;
+//     height: 540px;
+//     margin-left: auto;
+//     margin-right: auto;
+//     background-repeat: no-repeat;
+//     background-position: center;
+// }
+.img-triangle{
+    background-image: url(../assets/images/bg-triangle.svg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 200px;
 
+}

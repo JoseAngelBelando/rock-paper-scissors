@@ -1,0 +1,40 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.6rem 1rem;
+    border: 2px solid var(--header-outline);
+    border-radius: 1rem;
+    font-size: 3rem;
+}
+.logo {
+    font-size: 3rem;
+    line-height: 0.8;
+    text-align: center;
+}
+.block {
+    display: block;
+}
+.score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    border-radius: 1rem;
+    padding: 0.5rem 0;
+    background-color: #fff;
+    color: hsl(229deg, 64%, 46%);
+}
+.score__title {
+    font-size: 1.25rem;
+}
+.score__points {
+    color: hsl(229deg, 25%, 31%);
+    font-weight: 700;
+    font-size: 2.5rem;
+}
