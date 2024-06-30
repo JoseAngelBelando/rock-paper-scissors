@@ -19,38 +19,20 @@ const pointsPcElement = document.getElementById('points-pc');
 const gameRules = {
   paper: {
     rock: true,
-    spock: true,
-    scissors: false,
-    lizard: false
+    scissors: false
   },
   scissors: {
     paper: true,
-    lizard: true,
-    rock: false,
-    spock: false
+    rock: false
   },
   rock: {
     scissors: true,
-    lizard: true,
-    paper: false,
-    spock: false
-  },
-  lizard: {
-    spock: true,
-    paper: true,
-    rock: false,
-    scissors: false
-  },
-  spock: {
-    scissors: true,
-    rock: true,
-    lizard: false,
     paper: false
   }
 };
 
 // jugadas del ordenador
-const gameOptions = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
+const gameOptions = ['rock', 'paper', 'scissors'];
 // variables para guardar la opción selecionada por el jugador y por el pc
 let userSelection = null;
 let pcSelection = null;
