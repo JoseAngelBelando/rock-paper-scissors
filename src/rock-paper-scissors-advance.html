@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@600;0,700&display=swap" rel="stylesheet">
-    <title>Rock, Paper, Scissors</title>
+    <title>Rock, Paper, Scissors, lizard, spock</title>
   </head>
   <body>
     <header class="header">
@@ -21,6 +21,8 @@
         <span class="block">ROCK</span>
         <span class="block">PAPER</span>
         <span class="block">SCISORS</span>
+        <span class="block">LIZARD</span>
+        <span class="block">SPOCK</span>
       </div>
       <div class="score">
         <span class="score__title">PC:</span>
@@ -28,18 +30,24 @@
       </div>  
     </header>
     <main>
-      <div class="img-triangle"><img src="./assets/images (4)/images/bg-triangle.svg" alt="triangle">
+      <div class="img-pentagon"><img src="./assets/images (4)/images/bg-pentagon.svg" alt="image pentagon">
       <div id="game-items" class="game-items">
-        <div class="game-item game-item-paper" data-item="paper">
+        <div class="game-item game-item-paperad" data-item="paper">
           <img class="game-item-image" src="./assets/images (4)/images/icon-paper.svg" alt="icon paper">
         </div>
-        <div class="game-item game-item-scissors" data-item="scissors">
+        <div class="game-item game-item-scissorsad" data-item="scissors">
           <img class="game-item-image" src="./assets/images (4)/images/icon-scissors.svg" alt="icon scissors">
-          
         </div>
-        <div class="game-item game-item-rock" data-item="rock">
+        <div class="game-item game-item-rockad" data-item="rock">
           <img class="game-item-image" src="./assets/images (4)/images/icon-rock.svg" alt="icon rock">
         </div> 
+        <div class="game-item game-item-lizardad" data-item="lizard">
+          <img class="game-item-image" src="./assets/images (4)/images/icon-lizard.svg" alt="icon lizard">
+        </div> 
+        <div class="game-item game-item-spockad" data-item="spock">
+          <img class="game-item-image" src="./assets/images (4)/images/icon-spock.svg" alt="icon spock">
+        </div> 
+
       </div>
     </div>
     <div>
@@ -52,7 +60,7 @@
     </div> 
     <p id="result">You win</p>
     <div class="img">
-      <img id="img-rules" class="img-rules" src="./assets/images (4)/images/image-rules.svg" alt="image rules">
+      <img id="img-rules" class="img-rules" src="./assets/images (4)/images/image-rules-bonus.svg" alt="image rules">
     </div>
     <button id="button-rules" class="button-rules">RULES</button>
   </main>

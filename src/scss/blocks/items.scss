@@ -1,0 +1,75 @@
+@use '../mixins/hover.scss' as *;
+.game-item {
+    transition: transform 1.5s ease;
+    @include hover{
+        transform: scale(1.2)
+    }
+    --border-color: radial-gradient(circle at center, #1f3756, #141539);;
+    --shadow: hsl(217, 16%, 45%);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    border: 15px solid var(--border-color);
+    box-shadow: 0 5px var(--shadow), inset 0 5px rgba(0, 0, 150, 0.1);
+    background-color: #fff;
+    transition: transform 0.2s;
+    cursor: pointer;
+  }
+  
+  .game-item-paper{
+    border: 20px solid #5671f5;
+    position: absolute;
+     top: 120px;
+     left: 190px;
+  }
+  .game-item-scissors{
+    border: 20px solid rgb(237, 167, 35);
+    position: absolute;
+    top: 380px;
+    left: 340px;
+  }
+  .game-item-rock{
+    border: 20px solid rgb(222, 64, 93);
+    position: absolute;
+    top: 120px;
+    left: 500px;
+  }
+  // para que la imagen sea inmune al click
+  .game-item__image{
+    pointer-events: none;
+  }
+  // -------------------------------ADVANCE-----------------------------------
+  .game-item-paperad{
+    border: 20px solid #5671f5;
+    position: absolute;
+     top: 240px;
+     left: 500px;
+  }
+  .game-item-scissorsad{
+    border: 20px solid rgb(237, 167, 35);
+    position: absolute;
+    top: 150px;
+    left: 340px;
+  }
+  .game-item-rockad{
+    border: 20px solid rgb(222, 64, 93);
+    position: absolute;
+    top: 420px;
+    left: 450px;
+  }
+  .game-item-lizardad{
+    border: 20px solid #834ee3;
+    position: absolute;
+    top: 420px;
+    left: 250px;
+  }
+  .game-item-spockad{
+    border: 20px solid #2d8dab;
+    position: absolute;
+    top: 240px;
+    left: 200px;
+  }

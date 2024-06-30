@@ -19,20 +19,38 @@ const pointsPcElement = document.getElementById('points-pc');
 const gameRules = {
   paper: {
     rock: true,
-    scissors: false
+    spock: true,
+    scissors: false,
+    lizard: false
   },
   scissors: {
     paper: true,
-    rock: false
+    lizard: true,
+    rock: false,
+    spock: false
   },
   rock: {
     scissors: true,
+    lizard: true,
+    paper: false,
+    spock: false
+  },
+  lizard: {
+    spock: true,
+    paper: true,
+    rock: false,
+    scissors: false
+  },
+  spock: {
+    scissors: true,
+    rock: true,
+    lizard: false,
     paper: false
   }
 };
 
 // jugadas del ordenador
-const gameOptions = ['rock', 'paper', 'scissors'];
+const gameOptions = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
 // variables para guardar la opción selecionada por el jugador y por el pc
 let userSelection = null;
 let pcSelection = null;
@@ -86,3 +104,13 @@ gameItemsElement.addEventListener('click', event => {
   setUserSelection(event.target.dataset.item);
 });
 // Para pasar informacion desde html a js vamos a utilñizar los atributos data
+
+// Boton para las reglas
+document.getElementById('button-rules').addEventListener('click', event => {
+  let img = document.getElementById('img-rules');
+  if (img.style.display === 'none') {
+    img.style.display = 'block'; // Mostrar la imagen
+  } else {
+    img.style.display = 'none'; // Alternar para ocultar la imagen si ya está visible
+  }
+});
