@@ -1,10 +1,12 @@
 @use '../mixins/hover.scss' as *;
 .game-item {
-    transition: transform 1.5s ease;
+    transition: transform 3s ease;
     @include hover{
-        transform: scale(1.2)
+        transform: scale(1.2);
+        opacity: 0.9;
+        box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.7);
     }
-    --border-color: radial-gradient(circle at center, #1f3756, #141539);;
+    border-color: radial-gradient(circle at center, #1f3756, #141539);
     --shadow: hsl(217, 16%, 45%);
     position: absolute;
     display: flex;
