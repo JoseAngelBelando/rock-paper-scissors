@@ -36,9 +36,10 @@ const gameOptions = ['rock', 'paper', 'scissors'];
 // variables para guardar la opción selecionada por el jugador y por el pc
 let userSelection = null;
 let pcSelection = null;
-// variables para guardar los puntos los puntos
+// variables para guardar los puntos
 let userPoints = 0;
 let pcPoints = 0;
+let showResults = false;
 // funcion para cambiar el textcontent del marcador de puntos
 const updateScore = event => {
   pointsUserElement.textContent = userPoints;
