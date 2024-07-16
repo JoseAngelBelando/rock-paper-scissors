@@ -1,15 +1,109 @@
-html {
-  scroll-behavior: smooth;
-}
+@import '../mixins/hover.scss'; // Importa tus mixins si los necesitas
+
+/* Estilos generales */
 body {
-  max-width: 800px;
-  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
-  padding: 3rem 0;
-  background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237,49%,15%));
-  color: white;
-  font-family: 'Barlow Semi Condensed', sans-serif;
-  overflow: hidden;
+  margin: 0;
 }
 
+.container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 400px;
+}
 
+header {
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.player,
+.computer {
+  flex: 1;
+}
+
+.player h2,
+.computer h2 {
+  font-size: 1.5rem;
+  color: #555;
+}
+
+.player span,
+.computer span {
+  display: block;
+  font-size: 2rem;
+  color: #333;
+}
+
+.game {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.choices {
+  display: flex;
+  gap: 20px;
+}
+
+.game-item {
+  transition: transform 0.2s;
+  border-radius: 50%;
+  border: 15px solid #fff;
+  box-shadow: 0 5px hsl(217, 16%, 45%), inset 0 5px rgba(0, 0, 150, 0.1);
+  background-color: #fff;
+  cursor: pointer;
+
+  img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.game-item:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.7);
+}
+
+.result {
+  flex: 1;
+  text-align: center;
+}
+
+#result {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+#reset {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#reset:hover {
+  background-color: #555;
+}

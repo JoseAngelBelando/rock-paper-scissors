@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock Paper Scissors</title>
-  <link rel="stylesheet" href="./scss/styles.scss">
+  <link rel="stylesheet" href="./css/styles.css"> <!-- Cambiado a styles.css, que es el CSS compilado -->
 </head>
 <body>
   <div class="container">
@@ -24,14 +24,14 @@
       </div>
       <div class="game">
         <div class="choices">
-          <div class="choice" id="rock">
-            <img src="images/rock.png" alt="Rock">
+          <div class="game-item game-item-rock" id="rock" data-item="rock">
+            <img class="game-item-image" src="./assets/images (4)/images/icon-rock.svg" alt="Rock">
           </div>
-          <div class="choice" id="paper">
-            <img src="images/paper.png" alt="Paper">
+          <div class="game-item game-item-paper" id="paper" data-item="paper">
+            <img class="game-item-image" src="./assets/images (4)/images/icon-paper.svg" alt="Paper">
           </div>
-          <div class="choice" id="scissors">
-            <img src="images/scissors.png" alt="Scissors">
+          <div class="game-item game-item-scissors" id="scissors" data-item="scissors">
+            <img class="game-item-image" src="./assets/images (4)/images/icon-scissors.svg" alt="Scissors">
           </div>
         </div>
         <div class="result">
