@@ -10,112 +10,79 @@ import '../scss/styles.scss';
 // Mostrar resultado
 // Asignar puntos
 
-// index.js
+// script.js
 
-document.addEventListener('DOMContentLoaded', () => {
-  const gameItemsElement = document.getElementById('game-items');
-  const gameItemsAdvanceElement = document.getElementById('game-items-advance');
-  const userPickedElement = document.getElementById('user-picked');
-  const pcPickedElement = document.getElementById('pc-picked');
-  const resultElement = document.getElementById('result');
-  const pointsUserElement = document.getElementById('points-user');
-  const pointsPcElement = document.getElementById('points-pc');
-  const buttonRules = document.getElementById('button-rules');
-  const imgRules = document.getElementById('img-rules');
+const userScoreElement = document.getElementById('user-score');
+const computerScoreElement = document.getElementById('computer-score');
+const resultElement = document.getElementById('result');
 
-  // Variables to store user and PC selections, and points
-  let userSelection = null;
-  let pcSelection = null;
-  let userPoints = 0;
-  let pcPoints = 0;
+let userScore = 0;
+let computerScore = 0;
 
-  // Function to update the score display
-  const updateScore = () => {
-    pointsUserElement.textContent = userPoints;
-    pointsPcElement.textContent = pcPoints;
-  };
+// Function to reset the game scores
+const resetGame = () => {
+  userScore = 0;
+  computerScore = 0;
+  userScoreElement.textContent = userScore;
+  computerScoreElement.textContent = computerScore;
+  resultElement.textContent = 'Make your move';
+};
 
-  // Function to print the user and PC selections
-  const printResults = () => {
-    userPickedElement.textContent = userSelection.toUpperCase();
-    pcPickedElement.textContent = pcSelection.toUpperCase();
-  };
+// Function to generate a random computer choice
+const getComputerChoice = () => {
+  const choices = ['rock', 'paper', 'scissors'];
+  const randomIndex = Math.floor(Math.random() * choices.length);
+  return choices[randomIndex];
+};
 
-  // Function to check for a tie or determine winner
-  const checkTie = () => {
-    if (userSelection === pcSelection) {
-      resultElement.textContent = 'TIE';
-      return;
-    }
-
-    if (gameRules[userSelection][pcSelection]) {
-      resultElement.textContent = 'You Win';
-      userPoints++;
-    } else {
-      resultElement.textContent = 'You Lose';
-      pcPoints++;
-    }
-
-    updateScore();
-  };
-
-  // Function to generate a random selection for PC
-  const generateRandomPc = gameOptions => {
-    const randomPc = Math.floor(Math.random() * gameOptions.length);
-    return gameOptions[randomPc];
-  };
-
-  // Function to set user selection and start the game for Simple mode
-  const setUserSelectionSimple = item => {
-    userSelection = item;
-    pcSelection = generateRandomPc(gameOptionsSimple);
-    printResults();
-    checkTie();
-  };
-
-  // Event listener for game items in Simple mode
-  gameItemsElement.addEventListener('click', event => {
-    if (!event.target.classList.contains('game-item')) return;
-    setUserSelectionSimple(event.target.dataset.item);
-  });
-
-  // Function to set user selection and start the game for Advanced mode
-  const setUserSelectionAdvance = item => {
-    userSelection = item;
-    pcSelection = generateRandomPc(gameOptionsAdvanced);
-    printResults();
-    checkTie();
-  };
-
-  // Event listener for game items in Advanced mode
-  gameItemsAdvanceElement.addEventListener('click', event => {
-    if (!event.target.classList.contains('game-item')) return;
-    setUserSelectionAdvance(event.target.dataset.item);
-  });
-
-  // Event listener for rules button to toggle display of rules image
-  buttonRules.addEventListener('click', () => {
-    imgRules.style.display = imgRules.style.display === 'none' ? 'block' : 'none';
-  });
-
-  // Set initial game mode based on the URL or default to simple mode
-  const url = window.location.href;
-  const isAdvancedMode = url.includes('rock-paper-scissors-advance.html');
-
-  // Set game rules and options based on the mode
-  let gameRules, gameOptions;
-  if (isAdvancedMode) {
-    gameRules = gameRulesAdvanced;
-    gameOptions = gameOptionsAdvanced;
-    gameItemsAdvanceElement.parentElement.style.display = 'block';
-    gameItemsElement.parentElement.style.display = 'none';
+// Function to determine the winner
+const determineWinner = (userChoice, computerChoice) => {
+  if (userChoice === computerChoice) {
+    return "It's a tie!";
+  } else if (
+    (userChoice === 'rock' && computerChoice === 'scissors') ||
+    (userChoice === 'paper' && computerChoice === 'rock') ||
+    (userChoice === 'scissors' && computerChoice === 'paper')
+  ) {
+    return 'You win!';
   } else {
-    gameRules = gameRulesSimple;
-    gameOptions = gameOptionsSimple;
-    gameItemsElement.parentElement.style.display = 'block';
-    gameItemsAdvanceElement.parentElement.style.display = 'none';
+    return 'You lose!';
   }
+};
 
-  // Initialize score display
-  updateScore();
+// Function to update scores and display result
+const updateScoreAndResult = result => {
+  if (result === 'You win!') {
+    userScore++;
+    userScoreElement.textContent = userScore;
+  } else if (result === 'You lose!') {
+    computerScore++;
+    computerScoreElement.textContent = computerScore;
+  }
+  resultElement.textContent = result;
+};
+
+// Event listeners for each choice
+document.getElementById('rock').addEventListener('click', () => {
+  const computerChoice = getComputerChoice();
+  const result = determineWinner('rock', computerChoice);
+  updateScoreAndResult(result);
 });
+
+document.getElementById('paper').addEventListener('click', () => {
+  const computerChoice = getComputerChoice();
+  const result = determineWinner('paper', computerChoice);
+  updateScoreAndResult(result);
+});
+
+document.getElementById('scissors').addEventListener('click', () => {
+  const computerChoice = getComputerChoice();
+  const result = determineWinner('scissors', computerChoice);
+  updateScoreAndResult(result);
+});
+
+// Event listener for the reset button
+document.getElementById('reset').addEventListener('click', resetGame);
+
+// Initialize the game
+resetGame();
